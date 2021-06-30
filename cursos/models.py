@@ -22,8 +22,10 @@ class Curso(Base):
     def __str__(self):
         return self.title
 
+
 class Avaliacao(Base):
-    curso = models.ForeignKey("Curso", related_name='avaliacoes', on_delete=models.CASCADE)
+    curso = models.ForeignKey(
+        "Curso", related_name='avaliacoes', on_delete=models.CASCADE)
     nome = models.CharField(max_length=50)
     email = models.EmailField()
     comentario = models.TextField(blank=True, default='')
@@ -32,7 +34,7 @@ class Avaliacao(Base):
     class Meta:
         verbose_name = 'Avaliação'
         verbose_name_plural = 'Avaliações'
-        unique_together = ['email', 'curso' ]
+        unique_together = ['email', 'curso']
 
     def __str__(self):
         return f'{self.nome} avaliou o curso {self.curso} com nota {self.avaliacao}'
