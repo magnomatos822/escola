@@ -6,7 +6,6 @@ class Base(models.Model):
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
-
     class Meta:
         abstract = True
 

@@ -1,13 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
 from .models import Avaliacao, Curso
 from .serializers import AvaliacaoSerializer, CursosSerializer
 
 
 class AvaliacaoAPIView(APIView):
     """
-    Api de Cursos
+    Api de Avaliação
 
     """
 
